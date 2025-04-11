@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+section {
+  display: flex;
+  height: 400px;
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 35%;
+  top: 120px;
+}
+.container h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  text-shadow: 4px 4px 12px rgba(255, 255, 255);
+  color: #005b44;
+  margin-bottom: 1rem;
+}
+.todo {
+  width: 600px;
+  display: flex;
+  border-radius: 0.675rem;
+  gap: 1rem;
+  padding: 1rem 1.3rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  background-color: #e0d8e9;
+}
+.input {
+  width: 28rem;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+.input:hover,
+.input:focus,
+.input-group:hover .input {
+  outline: none;
+  border-color: #05060f;
+}
+
+.input-group:hover .label,
+.input:focus {
+  color: #05060fc2;
+}
+button {
+  font: inherit;
+  background-color: #f0f0f0;
+  border: 0;
+  color: #585858;
+  border-radius: 0.5em;
+  font-size: 1.275rem;
+  padding: 0.375em 1em;
+  font-weight: 600;
+  text-shadow: 0 0.0625em 0 #fff;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.275em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.3em 0 #cecece;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+button:active {
+  translate: 0 0.225em;
+  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+}
+/* showTodo css */
+
+.todo_list {
+  margin-top: 1rem;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.675rem;
+  /* gap: 1rem; */
+  padding: 1rem 1.3rem;
+  align-items: center;
+  justify-content: flex-start;
+  height: fit-content;
+  min-height: 200px;
+  background-color: #e0d8e9;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.todo-task {
+  margin: 1rem 0;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+ul {
+  width: 100%;
+}
+.todo-task img {
+  width: 32px;
+  cursor: pointer;
+}
+
+.selected {
+  content: "1";
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border: 1.3px solid #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  background-color: green;
+  justify-content: center;
+  align-items: center;
+}
+.completed {
+  color: #818181;
+  text-decoration-line: line-through;
+}
+.check-div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.check-div-1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.check {
+  width: 30px;
+  height: 30px;
+  border: 1.3px solid #dcdcdc;
+  border-radius: 50%;
+}
+
+/* Hide the default checkbox */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  border-radius: 5px;
+}
+
+.container1 {
+  display: flex;
+  align-items: center;
+  gap: 0.56rem;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container1 input:checked ~ .checkmark {
+  box-shadow: 1px 2px 0px rgb(183, 183, 183);
+  transition: all 0.2s;
+  opacity: 1;
+  background-image: linear-gradient(
+    45deg,
+    rgb(100, 61, 219) 0%,
+    rgb(217, 21, 239) 100%
+  );
+}
+
+.container1 input ~ .checkmark {
+  transition: all 0.2s;
+  opacity: 1;
+  box-shadow: 1px 1px 0px rgb(183, 183, 183);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked ~ .checkmark:after {
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark:after {
+  left: 0.56em;
+  top: 0.3em;
+  width: 0.3em;
+  height: 0.65em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+.container1 span {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.selectAll {
+  padding: 0.125rem 0.765rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clearTask {
+  display: flex;
+  font: inherit;
+  background-color: #f0f0f0;
+  border: 0;
+  color: #585858;
+  border-radius: 0.5em;
+  font-size: 1.275rem;
+  padding: 0.35rem 0.7rem;
+  font-weight: 600;
+  text-shadow: 0 0.0625em 0 #fff;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.275em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.3em 0 #cecece;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+.clearTask:active {
+  translate: 0 0.225em;
+  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+}
+.noTask {
+  margin-top: 1rem;
+}
