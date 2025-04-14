@@ -1,4 +1,4 @@
-import { useState, React, useContext } from "react";
+import { useState, React, useContext, useRef } from "react";
 // import { todoContext } from "../App";
 // import { todoContext } from "../TodoListProvider";
 import { useDispatch } from "react-redux";
@@ -6,6 +6,8 @@ import { addTask } from "../redux/TodoSlice";
 const Addtodo = () => {
   const [Task, setTask] = useState("");
   const dispatch = useDispatch();
+  const inputRef = useRef(null);
+
   // const { addTask } = useContext(todoContext);
   // const handleChange = (e) => {
   //   setTask(e.target.value);
@@ -15,12 +17,14 @@ const Addtodo = () => {
       // addTask(Task);
       dispatch(addTask(Task));
       setTask("");
+      inputRef.current.focus();
     }
   };
   return (
     <div className="todo">
       <div className="input-div">
         <input
+          ref={inputRef}
           autoComplete="off"
           name="Todo"
           id="todo"

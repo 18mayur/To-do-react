@@ -28,7 +28,7 @@ export const slice = createSlice({
     },
 
     handleSelectAll: (state) => {
-      let allCompleted = false;
+      let allCompleted = true;
       for (const task of state.todo) {
         if (!task.completed) {
           allCompleted = false;
